@@ -1,0 +1,24 @@
+c:\>curl http://localhost:8888/_ah/api/pointofinterestendpoint/v1/pointofinterest
+{
+  "items" : [ {
+    "id" : "4785074604081152",
+    "name" : "Test 5arja",
+    "address" : "Riadh El Andalous",
+    "latitude" : 0.0,
+    "longitude" : 0.0
+  },... {}
+  
+			]
+  
+  
+  }
+  
+  
+c:\>curl -H "Content-Type: application/json" -X POST -d "{\"name\":\"NEW NEW 5arja Menzah\",\"address\":\"NEW Menzah XI\"}" http://localhost:8888/_ah/api/pointofinterestendpoint/v1/pointofinterest
+{
+  "id" : "4855443348258816",
+  "name" : "NEW NEW 5arja Menzah",
+  "address" : "NEW Menzah XI",
+  "latitude" : 0.0,
+  "longitude" : 0.0
+}

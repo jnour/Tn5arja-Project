@@ -1,0 +1,222 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://tn-5arja.appspot.com/_ah/api",
+  "name" : "pointofinterestendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://tn-5arja.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "nj.tn",
+  "ownerName" : "nj.tn",
+  "packagePath" : "sorties.model",
+  "methods" : {
+    "pointofinterestendpoint.insertPointOfInterest" : {
+      "path" : "pointofinterest",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tn.nj.sorties.model.PointOfInterestEndpoint.insertPointOfInterest",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "pointofinterestendpoint.updatePointOfInterest" : {
+      "path" : "pointofinterest",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tn.nj.sorties.model.PointOfInterestEndpoint.updatePointOfInterest",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "pointofinterestendpoint.getPointOfInterest" : {
+      "path" : "pointofinterest/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tn.nj.sorties.model.PointOfInterestEndpoint.getPointOfInterest",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "pointofinterestendpoint.removePointOfInterest" : {
+      "path" : "pointofinterest/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tn.nj.sorties.model.PointOfInterestEndpoint.removePointOfInterest",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "pointofinterestendpoint.listPointOfInterest" : {
+      "path" : "pointofinterest",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "tn.nj.sorties.model.PointOfInterestEndpoint.listPointOfInterest",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "PointOfInterest" : {
+        "id" : "PointOfInterest",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "address" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "postalCode" : {
+            "type" : "string"
+          },
+          "tel" : {
+            "type" : "string"
+          },
+          "telMobile" : {
+            "type" : "string"
+          },
+          "latitude" : {
+            "type" : "number"
+          },
+          "longitude" : {
+            "type" : "number"
+          },
+          "comment" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "bannerImage" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_PointOfInterest" : {
+        "id" : "CollectionResponse_PointOfInterest",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "PointOfInterest"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "tn.nj.sorties.model.PointOfInterestEndpoint.insertPointOfInterest" : {
+        "request" : {
+          "$ref" : "PointOfInterest"
+        },
+        "response" : {
+          "$ref" : "PointOfInterest"
+        }
+      },
+      "tn.nj.sorties.model.PointOfInterestEndpoint.updatePointOfInterest" : {
+        "request" : {
+          "$ref" : "PointOfInterest"
+        },
+        "response" : {
+          "$ref" : "PointOfInterest"
+        }
+      },
+      "tn.nj.sorties.model.PointOfInterestEndpoint.getPointOfInterest" : {
+        "response" : {
+          "$ref" : "PointOfInterest"
+        }
+      },
+      "tn.nj.sorties.model.PointOfInterestEndpoint.removePointOfInterest" : {
+      },
+      "tn.nj.sorties.model.PointOfInterestEndpoint.listPointOfInterest" : {
+        "response" : {
+          "$ref" : "CollectionResponse_PointOfInterest"
+        }
+      }
+    }
+  }
+}
